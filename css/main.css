@@ -4,62 +4,65 @@
 /* цвет акцент #18a0fb */
 /* вторичный цвет фона #F5F5F5 */
 
+/* метод называется кастомные css свойства */
+:root {
+	--primary-text-color: rgba(0, 0, 0, 0.8);
+	--title-text-color: #000000;
+	--accent-color: #18a0fb;
+	--primary-white-color: #ffffff;
+	--secondary-bg-color: #f5f5f5;
+}
+
 .list {
+	padding: 0;
+	margin: 0;
 	list-style: none;
 }
 
-/* hero */
+/* html */
 
-.hero-title {
-	color: var(--title-text-color);
-
-	font-weight: 400;
-	font-size: 56px;
-	line-height: 1.42;
-	text-align: center;
+html {
+	box-sizing: border-box;
 }
 
-/* section */
-
-.section-title {
-	color: var(--title-text-color);
-
-	font-weight: 400;
-	font-size: 48px;
-	line-height: 1.5;
-	text-align: center;
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
-.section-description {
-	font-size: 36px;
-	line-height: 1.39;
-}
+/* body */
 
-/* feature */
-
-.feature-list .title {
-	color: var(--title-text-color);
-
-	font-weight: 700;
-	font-size: 24px;
-	line-height: 1.5;
-}
-
-/* examples */
-
-.work-list .title {
-	color: var(--title-text-color);
-
-	font-weight: 700;
-	font-size: 24px;
-	line-height: 1.5;
-}
-
-/* button */
-
-.button {
-	color: var(--title-text-color);
+body {
 	background-color: var(--primary-white-color);
+	color: var(--primary-text-color);
+
+	font-family: Montserrat, sans-serif;
+	letter-spacing: -0.015em;
+	font-size: 18px;
+	line-height: 1.67;
+}
+
+/* logo */
+
+.logo {
+	color: var(--title-text-color);
+
+	font-family: Comfortaa, cursive;
+	font-size: 28px;
+	line-height: 1.14;
+
+	text-decoration: none;
+}
+
+.logo:hover {
+	color: var(--accent-color);
+}
+
+/* site-nav */
+
+.site-nav .link {
+	color: var(--accent-color);
 
 	font-weight: 500;
 	font-size: 15px;
@@ -68,12 +71,144 @@
 	text-decoration: none;
 }
 
+.site-nav .link:hover,
+.site-nav .link:focus {
+	color: var(--title-text-color);
+}
+
+/* hero */
+
+.hero {
+	text-align: center;
+}
+
+.hero-title {
+	margin-top: 0;
+	margin-bottom: 40px;
+	color: var(--title-text-color);
+	font-weight: 400;
+	font-size: 56px;
+	line-height: 1.42;
+}
+
+/* section */
+
+.section {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+.section.no-padding {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.section-title {
+	margin-top: 0;
+	margin-bottom: 60px;
+	color: var(--title-text-color);
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 1.5;
+}
+
+.section-title.centered {
+	text-align: center;
+}
+
+.section-description {
+	margin-top: 0;
+	margin-bottom: 80px;
+	font-size: 36px;
+	line-height: 1.39;
+}
+
+/* container */
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1440px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* feature */
+
+.feature-list .title {
+	color: var(--title-text-color);
+	margin-top: 0;
+	margin-bottom: 24px;
+
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.5;
+}
+
+.feature-list p {
+	margin-top: 0;
+	margin-bottom: 32px;
+}
+
+/* examples */
+
+.work-list .title {
+	margin-top: 0;
+	margin-bottom: 24px;
+	color: var(--title-text-color);
+
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.5;
+}
+
+.work-list > .item {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.work-list > .item:nth-child(2n) {
+	background-color: var(--secondary-bg-color);
+}
+
+/* button */
+.button {
+	display: inline-block;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	padding: 11px 22px;
+	min-width: 130px;
+
+	color: var(--title-text-color);
+	background-color: var(--primary-white-color);
+
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 1.2;
+	text-decoration: none;
+	text-align: center;
+}
+
 .button.primary {
 	color: var(--primary-white-color);
 	background-color: var(--accent-color);
 }
 
 .button.secondary {
+	border-color: var(--accent-color);
+
 	color: var(--accent-color);
 	background-color: var(--primary-white-color);
+}
+
+/* footer */
+
+.copyright {
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.social > .label {
+	font-size: 15px;
+	line-height: 1.6;
 }
